@@ -1,0 +1,89 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #ebe7e7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    font-size: 2rem;
+    color: #a0a0a0;
+}
+
+header,
+form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form button {
+    border: none;
+    padding: .5rem;
+    font-size: 2rem;
+    background: white;
+}
+
+form button {
+    color: #a0a0a0;
+    cursor: pointer;
+    background: white;
+    transition: all ease 0.2s;
+}
+
+form button:hover {
+    background: #EBF5EE;
+    color: white;
+}
+
+#todo-list {
+    list-style: none;
+    min-width: 30%;
+}
+
+#todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.toDo{
+    font-size: 1.5rem;
+    display:flex;
+    margin:0.5rem;
+    background:white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toDo li {
+    flex:1;
+}
+.trash-button,
+.completed-button{
+    border:none;
+    background:#f16161;
+    padding:1rem;
+    cursor: pointer;
+}
+
+.completed-button{
+    background:#61f180;
+}
+
+.fa-trash,
+.fa-check{
+    pointer-events: none;   
+}
+
+
+.completed{
+    text-decoration: line-through;  
+}
