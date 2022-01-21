@@ -2,7 +2,7 @@
 let todoInput = document.getElementById('input');
 let todoList = document.getElementById('todo-list')
 let todoButton = document.getElementById('btn');
-
+let modal = document.getElementById('model');
 
 //Event Listeners
 window.addEventListener('DOMContentLoaded', addSaveLocalStorage);
@@ -48,6 +48,7 @@ function deleteCheck(e) {
     const item = e.target;
     if (item.classList[0] === 'trash-button') {
         const todo = item.parentElement;
+        removeLocalTodo(todo);
         todo.remove();
     } else if (item.classList[0] === 'completed-button') {
         const todo = item.parentElement;
@@ -99,3 +100,20 @@ function addSaveLocalStorage() {
         todoList.appendChild(todoDiv);
     });
 }
+
+function removeLocalTodo(todo) {
+    let todoArray;
+    if (localStorage.getItem("todoArray") === null) {
+        todoArray = [];
+    } else {
+        todoArray = JSON.parse(localStorage.getItem("todoArray"));
+    }
+    const indexOfTodos = todo.children[0].innerText;
+    console.log();
+    todoArray.splice(todoArray.indexOf(indexOfTodos), 1);
+    localStorage.setItem("todoArray", JSON.stringify(todoArray));
+}
+
+setInterval(function modalWindow() {
+    modal.style.display = "block";
+}, 2000);

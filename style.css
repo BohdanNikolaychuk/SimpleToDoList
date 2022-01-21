@@ -103,3 +103,20 @@ form button:hover {
 .completed{
     text-decoration: line-through;  
 }
+
+/* Modal window */
+
+.modal{
+    display: none;
+    position: absolute;
+    background:white;
+   position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.model__inner{
+    padding: 30px;
+}
