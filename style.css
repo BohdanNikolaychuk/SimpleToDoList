@@ -30,6 +30,15 @@ form button {
     background: white;
 }
 
+#input{
+    border-radius: 20px 0 0 20px
+}
+
+#btn{
+    border-radius:0 20px 20px 0;
+}
+
+
 form button {
     color: #a0a0a0;
     cursor: pointer;
@@ -45,6 +54,7 @@ form button:hover {
 #todo-list {
     list-style: none;
     min-width: 30%;
+    
 }
 
 #todo-container {
@@ -61,6 +71,7 @@ form button:hover {
     background:white;
     justify-content: space-between;
     align-items: center;
+    border-radius:20px;
 }
 
 .toDo li {
@@ -73,9 +84,14 @@ form button:hover {
     padding:1rem;
     cursor: pointer;
 }
+.trash-button{
+    border-radius: 0 20px 20px 0;
+}
+
 
 .completed-button{
     background:#61f180;
+    border-radius:20px 0 0 20px
 }
 
 .fa-trash,
