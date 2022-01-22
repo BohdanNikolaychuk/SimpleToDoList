@@ -3,12 +3,16 @@ let todoInput = document.getElementById('input');
 let todoList = document.getElementById('todo-list')
 let todoButton = document.getElementById('btn');
 let modal = document.getElementById('model');
+let agreeBtn = document.getElementById('agree');
+let disagreeBtn = document.getElementById('disagree');
 
 //Event Listeners
 window.addEventListener('DOMContentLoaded', addSaveLocalStorage);
+window.addEventListener('load', modalWindow);
 todoButton.addEventListener('click', addToDo);
 todoList.addEventListener('click', deleteCheck);
-
+agreeBtn.addEventListener('click', clearLocalStorage);
+disagreeBtn.addEventListener('click', closeModal)
 
 // Function
 function addToDo(e) {
@@ -109,11 +113,19 @@ function removeLocalTodo(todo) {
         todoArray = JSON.parse(localStorage.getItem("todoArray"));
     }
     const indexOfTodos = todo.children[0].innerText;
-    console.log();
     todoArray.splice(todoArray.indexOf(indexOfTodos), 1);
     localStorage.setItem("todoArray", JSON.stringify(todoArray));
 }
 
-setInterval(function modalWindow() {
-    modal.style.display = "block";
-}, 2000);
+function modalWindow() {
+    modal.style.display = "flex";
+}
+
+function clearLocalStorage() {
+    localStorage.clear();
+    modal.style.display = "none";
+
+}
+function closeModal() {
+    modal.style.display = "none";
+}
